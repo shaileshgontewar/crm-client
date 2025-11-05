@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/common/ProtectedRoute';
-import Layout from './components/layout/Layout';
-import Toast from './components/common/Toast';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import Enquiries from './pages/Enquiries';
-import Users from './pages/Users';
-import PublicEnquiry from './pages/PublicEnquiry';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import Layout from "./components/layout/Layout";
+import Toast from "./components/common/Toast";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Enquiries from "./pages/Enquiries";
+import Users from "./pages/Users";
+import PublicEnquiry from "./pages/PublicEnquiry";
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
       <AuthProvider>
         <Toast />
         <Routes>
-             <Route path="/contact" element={<PublicEnquiry />} />
+          <Route path="/contact" element={<PublicEnquiry />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          
+
           <Route
             path="/"
             element={
@@ -34,7 +34,7 @@ function App() {
             <Route
               path="users"
               element={
-                <ProtectedRoute roles={['admin']}>
+                <ProtectedRoute roles={["admin"]}>
                   <Users />
                 </ProtectedRoute>
               }
